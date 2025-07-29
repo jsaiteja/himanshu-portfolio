@@ -5,83 +5,153 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Himanshu Pal - Portfolio</title>
   <style>
+    :root {
+      --primary-color: #2b2e4a;
+      --accent-color: #e84545;
+      --bg-light: #f9f9f9;
+      --bg-dark: #1e1e2f;
+      --text-light: #fff;
+      --text-dark: #333;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f7f7f7;
-      color: #333;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      scroll-behavior: smooth;
     }
+
     header {
-      background: #2b2e4a;
-      color: white;
-      padding: 2rem;
+      background: var(--primary-color);
+      color: var(--text-light);
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    nav {
+      background-color: var(--bg-dark);
+      padding: 0.8rem 1rem;
       text-align: center;
     }
+
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
     header img {
-      width: 150px;
-      height: 150px;
+      width: 140px;
+      height: 140px;
       object-fit: cover;
       border-radius: 50%;
       margin-top: 1rem;
     }
+
     section {
-      padding: 2rem;
+      padding: 3rem 2rem;
       max-width: 1000px;
       margin: auto;
+      background-color: white;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
+
     h2 {
-      border-bottom: 2px solid #2b2e4a;
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--accent-color);
       padding-bottom: 0.5rem;
     }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
     .skills-list, .tools-list {
       list-style: none;
       padding: 0;
       display: flex;
       flex-wrap: wrap;
     }
+
     .skills-list li, .tools-list li {
-      background: #e0e0e0;
-      margin: 5px;
-      padding: 8px 12px;
-      border-radius: 5px;
+      background: #ececec;
+      margin: 6px;
+      padding: 10px 16px;
+      border-radius: 20px;
+      font-size: 14px;
     }
+
     .project {
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
     }
+
     .project-photo {
       width: 100%;
       max-width: 600px;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 0.5rem;
+      height: auto;
+      border-radius: 8px;
       margin-top: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    .portfolio-container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem;
-    }
+
     .testimonial {
       margin-bottom: 2rem;
+      padding: 1rem;
+      background-color: #f0f0f8;
+      border-radius: 10px;
     }
+
     .testimonial-photo {
-      width: 100px;
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
       border-radius: 50%;
     }
+
+    .contact-links a {
+      display: inline-block;
+      margin-right: 1.5rem;
+      color: var(--accent-color);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
     footer {
-      background: #2b2e4a;
+      background: var(--primary-color);
       color: white;
       text-align: center;
       padding: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+
+      .skills-list li, .tools-list li {
+        width: 100%;
+      }
+
+      .project-photo {
+        height: auto;
+      }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="./images/himanshu.jpg" alt="Himanshu Pal Photo" class="profile-photo">
+  <img src="./images/himanshu.jpg" alt="Himanshu Pal Photo">
   <h1>Himanshu Pal</h1>
   <p>Freelance IT Project Manager | Based in Delhi, India | Available Globally</p>
   <p>Email: himanshuirctc7@gmail.com | Phone: +91-7905888072</p>
@@ -91,134 +161,139 @@
   </p>
 </header>
 
-<div class="portfolio-container">
-  <section>
-    <h2>About Me</h2>
-    <p>I’m a results-driven IT Project Manager with over a decade of experience delivering scalable software, mobile, and web applications across domains like healthcare, travel, e-commerce, and SaaS. I thrive in fast-paced environments and lead global teams with clarity and empathy.</p>
-  </section>
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#testimonials">Testimonials</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <section>
-    <h2>Key Competencies</h2>
-    <ul>
-      <li>Project Lifecycle Ownership (Agile, Scrum, Kanban)</li>
-      <li>Cross-functional Team Leadership</li>
-      <li>Client Communication & Requirement Gathering</li>
-      <li>Timeline & Budget Management</li>
-      <li>SEO, Digital Product Launches, DevOps Collaboration</li>
-    </ul>
-  </section>
+<section id="about">
+  <h2>About Me</h2>
+  <p>I’m a results-driven IT Project Manager with over a decade of experience delivering scalable software, mobile, and web applications across domains like healthcare, travel, e-commerce, and SaaS. I thrive in fast-paced environments and lead global teams with clarity and empathy.</p>
+</section>
 
-  <section>
-    <h2>Tech & Tools</h2>
-    <ul>
-      <li><strong>PM Tools:</strong> Jira, Trello, ClickUp, Asana</li>
-      <li><strong>Dev Tools:</strong> GitHub, GitLab, Bitbucket</li>
-      <li><strong>Communication:</strong> Slack, Zoom, Notion</li>
-      <li><strong>Design/QA:</strong> Figma, Zeplin, BrowserStack</li>
-      <li><strong>Cloud:</strong> AWS, Firebase, DigitalOcean</li>
-    </ul>
-  </section>
+<section>
+  <h2>Key Competencies</h2>
+  <ul>
+    <li>Project Lifecycle Ownership (Agile, Scrum, Kanban)</li>
+    <li>Cross-functional Team Leadership</li>
+    <li>Client Communication & Requirement Gathering</li>
+    <li>Timeline & Budget Management</li>
+    <li>SEO, Digital Product Launches, DevOps Collaboration</li>
+  </ul>
+</section>
 
-  <section>
-    <h2>Tech Stack</h2>
-    <ul class="skills-list">
-      <li>Python</li>
-      <li>JavaScript</li>
-      <li>Java</li>
-      <li>React</li>
-      <li>Flutter</li>
-      <li>Node.js</li>
-      <li>GCP</li>
-      <li>AWS</li>
-      <li>Kubernetes</li>
-      <li>Docker</li>
-    </ul>
-  </section>
+<section>
+  <h2>Tech & Tools</h2>
+  <ul>
+    <li><strong>PM Tools:</strong> Jira, Trello, ClickUp, Asana</li>
+    <li><strong>Dev Tools:</strong> GitHub, GitLab, Bitbucket</li>
+    <li><strong>Communication:</strong> Slack, Zoom, Notion</li>
+    <li><strong>Design/QA:</strong> Figma, Zeplin, BrowserStack</li>
+    <li><strong>Cloud:</strong> AWS, Firebase, DigitalOcean</li>
+  </ul>
+</section>
 
-  <section>
-    <h2>Tools & Platforms</h2>
-    <ul class="tools-list">
-      <li>Firebase</li>
-      <li>GitHub Actions</li>
-      <li>Jenkins</li>
-      <li>PostgreSQL</li>
-      <li>MongoDB</li>
-      <li>WordPress</li>
-    </ul>
-  </section>
+<section>
+  <h2>Tech Stack</h2>
+  <ul class="skills-list">
+    <li>Python</li>
+    <li>JavaScript</li>
+    <li>Java</li>
+    <li>React</li>
+    <li>Flutter</li>
+    <li>Node.js</li>
+    <li>GCP</li>
+    <li>AWS</li>
+    <li>Kubernetes</li>
+    <li>Docker</li>
+  </ul>
+</section>
 
-  <section>
-    <h2>Featured Projects</h2>
+<section>
+  <h2>Tools & Platforms</h2>
+  <ul class="tools-list">
+    <li>Firebase</li>
+    <li>GitHub Actions</li>
+    <li>Jenkins</li>
+    <li>PostgreSQL</li>
+    <li>MongoDB</li>
+    <li>WordPress</li>
+  </ul>
+</section>
 
-    <div class="project">
-      <h3>SplitStay – Social Travel Platform</h3>
-      <p>A mobile-first platform to coordinate and share travel plans with friends. Built using Flutter and Firebase, enabling group trip planning, location sharing, and activity voting.</p>
-      <img src="./images/split_stay.png" alt="SplitStay Project" class="project-photo"/>
-    </div>
+<section id="projects">
+  <h2>Featured Projects</h2>
 
-    <div class="project">
-      <h3>ObserVA – Medical Research App</h3>
-      <p>A mobile app to collect health data from patients for a long-term clinical study. Includes offline sync, secure login, and custom data forms. Built using React Native and Google Cloud Functions.</p>
-      <img src="./images/tele_health.png" alt="ObserVA Project" class="project-photo"/>
-    </div>
+  <div class="project">
+    <h3>SplitStay – Social Travel Platform</h3>
+    <p>A mobile-first platform to coordinate and share travel plans with friends. Built using Flutter and Firebase.</p>
+    <img src="./images/split_stay.png" alt="SplitStay Project" class="project-photo">
+  </div>
 
-    <div class="project">
-      <h3>TaskFair – Freelance Marketplace</h3>
-      <p>An e-commerce-like platform for hiring verified freelancers. Features include bidding, secure payments, user reviews, and a built-in messaging system. Developed using Node.js, PostgreSQL, and AWS.</p>
-      <img src="./images/ecommerce.png" alt="TaskFair Project" class="project-photo"/>
-    </div>
-  </section>
+  <div class="project">
+    <h3>ObserVA – Medical Research App</h3>
+    <p>A mobile app to collect health data from patients for clinical studies. Built with React Native and GCP.</p>
+    <img src="./images/tele_health.png" alt="ObserVA Project" class="project-photo">
+  </div>
 
-  <section>
-    <h2>Certifications</h2>
-    <ul>
-      <li>Scrum Master Certified (SMC®)</li>
-      <li>PMP® – Project Management Professional</li>
-      <li>Agile PM – Coursera/LinkedIn</li>
-    </ul>
-  </section>
+  <div class="project">
+    <h3>TaskFair – Freelance Marketplace</h3>
+    <p>An e-commerce-like freelance hiring platform with secure payments and messaging. Node.js + AWS.</p>
+    <img src="./images/ecommerce.png" alt="TaskFair Project" class="project-photo">
+  </div>
+</section>
 
-  <section>
-    <h2>Client Testimonials</h2>
+<section>
+  <h2>Certifications</h2>
+  <ul>
+    <li>Scrum Master Certified (SMC®)</li>
+    <li>PMP® – Project Management Professional</li>
+    <li>Agile PM – Coursera/LinkedIn</li>
+  </ul>
+</section>
 
-    <div class="testimonial">
-      <img src="./images/Roberto.jpeg" class="testimonial-photo" alt="Client 1">
-      <p><strong>Roberto Baldizon – CTO</strong></p>
-      <p>"I enjoyed working with Himanshu Pal and can’t recommend him highly enough. His hard work, dedication, and sense of responsibility were evident from day one. Himanshu maintained transparent and clear communication throughout the project, making the process smooth and collaborative. His flexibility in adapting to our needs and timelines was truly appreciated, and the quality of work he delivered was outstanding. If you’re looking for someone reliable and results-driven, Himanshu is the person to go to. Thank you, Himanshu, for your excellent work!"</p>
-    </div>
+<section id="testimonials">
+  <h2>Client Testimonials</h2>
 
-    <div class="testimonial">
-      <img src="./images/Michael.jpeg" class="testimonial-photo" alt="Client 2">
-      <p><strong>Michael Lapunzina</strong></p>
-      <p>"I am delighted to express my utmost satisfaction and gratitude for Himanshu’s dedicated team’s exceptional work and unwavering support. Their commitment to excellence, professionalism, and tireless efforts exceeded our expectations. Throughout the process, the team exhibited a high level of expertise and technical proficiency, showcasing their ability to easily navigate complex challenges. One of the standout qualities of Himanshu and his team is their responsiveness and open communication. This level of transparency fostered a collaborative and trusting relationship, making the entire experience smooth and enjoyable. The team’s dedication to delivering a user-friendly and innovative patient engagement app was evident in the final product. It is a testament to the team’s commitment to quality and relentless pursuit of excellence. Moreover, Himanshu and his team provided unparalleled support even after the app’s launch."</p>
-    </div>
+  <div class="testimonial">
+    <img src="./images/Roberto.jpeg" class="testimonial-photo" alt="Roberto">
+    <p><strong>Roberto Baldizon – CTO</strong></p>
+    <p>"His hard work, dedication, and sense of responsibility were evident from day one. If you’re looking for someone reliable and results-driven, Himanshu is the person to go to."</p>
+  </div>
 
-    <div class="testimonial">
-      <img src="./images/Lee.jpeg" class="testimonial-photo" alt="Client 2">
-      <p><strong>Lee Paxman Clarke</strong></p>
-      <p>"We have worked with Himanshu on multiple projects now and look forward to continuing to collaborate. Himanshu always responds promptly to our questions and is very professional. We have worked with other people before who have not provided as good of a service as Himanshu so we are glad to have found a reliable and honest partner for developing projects. We have worked on app development, designing custom UI/UX and ongoing app maintenance."</p>
-    </div>
+  <div class="testimonial">
+    <img src="./images/Michael.jpeg" class="testimonial-photo" alt="Michael">
+    <p><strong>Michael Lapunzina</strong></p>
+    <p>"Himanshu’s team exceeded our expectations. Their technical proficiency and transparency made the entire experience smooth and enjoyable."</p>
+  </div>
 
-    <div class="testimonial">
-      <img src="./images/Frank.jpeg" class="testimonial-photo" alt="Client 2">
-      <p><strong>Frank Koungoue</strong></p>
-      <p>"We are really proud of what we have created with Himanshu and the team. Thank you for the help and support with this project."</p>
-    </div>
+  <div class="testimonial">
+    <img src="./images/Lee.jpeg" class="testimonial-photo" alt="Lee">
+    <p><strong>Lee Paxman Clarke</strong></p>
+    <p>"Himanshu always responds promptly and is very professional. We’re glad to have found a reliable and honest partner for development."</p>
+  </div>
 
-  </section>
-  <section>
-    <h2>Contact</h2>
-    <p>Let’s collaborate! Open to short-term gigs, digital product launches, and long-term leadership roles.</p>
-    <p>
-      <a href="mailto:himanshuirctc7@gmail.com">📧 Email Me</a>
-      <a href="tel:+917905888072">📞 Call Now</a>
-    </p>
-  </section>
-</div>
+  <div class="testimonial">
+    <img src="./images/Frank.jpeg" class="testimonial-photo" alt="Frank">
+    <p><strong>Frank Koungoue</strong></p>
+    <p>"We are really proud of what we have created with Himanshu and the team. Thank you!"</p>
+  </div>
+</section>
 
-  <footer>
-    <p>© 2025 Himanshu Pal. All rights reserved.</p>
-  </footer>
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Let’s collaborate! Open to short-term gigs, product launches, and leadership roles.</p>
+  <p class="contact-links">
+    <a href="mailto:himanshuirctc7@gmail.com">📧 Email Me</a>
+    <a href="tel:+917905888072">📞 Call Now</a>
+  </p>
+</section>
+
+<footer>
+  <p>© 2025 Himanshu Pal. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
