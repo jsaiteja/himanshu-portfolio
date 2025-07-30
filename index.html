@@ -1,595 +1,222 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Himanshu Pal - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #1a2238;
-      --secondary: #9daaf2;
-      --accent: #ff6a3d;
-      --bg: #f4f6fb;
-      --card-bg: #fff;
-      --text: #22223b;
-      --muted: #6c757d;
-      --shadow: 0 4px 24px rgba(26,34,56,0.07);
-    }
-
-    body {
-      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    header {
-      background: linear-gradient(90deg, var(--primary) 70%, var(--accent) 100%);
-      color: #fff;
-      text-align: center;
-      padding: 3rem 1rem 2rem 1rem;
-      position: relative;
-    }
-
-    header img {
-      width: 130px;
-      height: 130px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 5px solid var(--secondary);
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0.5rem 0 0.2rem 0;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    header h2 {
-      font-size: 1.2rem;
-      font-weight: 400;
-      margin: 0.2rem 0 1rem 0;
-      color: var(--secondary);
-    }
-
-    .header-contact {
-      margin: 0.5rem 0 1rem 0;
-      font-size: 1rem;
-      color: var(--secondary);
-    }
-
-    .header-links a {
-      color: #fff;
-      background: var(--accent);
-      padding: 0.5rem 1.2rem;
-      border-radius: 20px;
-      margin: 0 0.5rem;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.2s;
-      display: inline-block;
-    }
-    .header-links a:hover {
-      background: #ff8c5a;
-    }
-
-    nav {
-      background: #fff;
-      box-shadow: var(--shadow);
-      padding: 0.7rem 1rem;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    nav a {
-      color: var(--primary);
-      margin: 0 1.2rem;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: color 0.2s;
-      position: relative;
-    }
-    nav a:after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 2px;
-      background: var(--accent);
-      transition: width .3s;
-      margin: 0 auto;
-    }
-    nav a:hover, nav a.active {
-      color: var(--accent);
-    }
-    nav a:hover:after, nav a.active:after {
-      width: 100%;
-    }
-
-    section {
-      background: var(--card-bg);
-      max-width: 950px;
-      margin: 2.5rem auto;
-      padding: 2.5rem 2rem;
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-    }
-
-    h2 {
-      color: var(--primary);
-      font-size: 2rem;
-      border-left: 5px solid var(--accent);
-      padding-left: 0.7rem;
-      margin-bottom: 1.5rem;
-      font-weight: 700;
-    }
-
-    .about-summary {
-      font-size: 1.15rem;
-      color: var(--muted);
-      margin-bottom: 1.2rem;
-    }
-
-    .quick-facts {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-bottom: 1.5rem;
-    }
-    .quick-fact {
-      flex: 1 1 180px;
-      background: var(--bg);
-      border-radius: 12px;
-      padding: 1.2rem 1rem;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(26,34,56,0.04);
-    }
-    .quick-fact strong {
-      display: block;
-      font-size: 1.5rem;
-      color: var(--accent);
-      margin-bottom: 0.2rem;
-    }
-    .quick-fact span {
-      color: var(--primary);
-      font-size: 1rem;
-    }
-
-    ul, .skills-list, .tools-list {
-      padding-left: 1.2rem;
-      margin: 0.5rem 0 1.5rem 0;
-    }
-    .skills-list, .tools-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      list-style: none;
-      padding: 0;
-    }
-    .skills-list li, .tools-list li {
-      background: var(--secondary);
-      color: var(--primary);
-      padding: 0.5rem 1.1rem;
-      border-radius: 18px;
-      font-size: 1rem;
-      font-weight: 600;
-      box-shadow: 0 1px 4px rgba(26,34,56,0.05);
-      margin: 0;
-    }
-
-    .project {
-      margin-bottom: 2.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      align-items: flex-start;
-    }
-    .project-photo {
-      width: 260px;
-      max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(26,34,56,0.08);
-      margin-top: 0.5rem;
-      background: #f8f9fa;
-    }
-    .project-details {
-      flex: 1 1 300px;
-    }
-    .project h3 {
-      margin-top: 0;
-      color: var(--accent);
-      font-size: 1.25rem;
-      font-weight: 700;
-    }
-    .project-links a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-      margin-right: 1.2rem;
-      font-size: 1rem;
-    }
-    .project-links a:hover {
-      text-decoration: underline;
-    }
-
-    .testimonial {
-      margin-bottom: 2.2rem;
-      padding: 1.2rem 1rem;
-      background: var(--bg);
-      border-radius: 12px;
-      box-shadow: 0 1px 8px rgba(26,34,56,0.04);
-      display: flex;
-      align-items: flex-start;
-      gap: 1.2rem;
-    }
-    .testimonial-photo {
-      width: 70px;
-      height: 70px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid var(--secondary);
-      margin-top: 0.2rem;
-    }
-    .testimonial-content {
-      flex: 1;
-    }
-    .testimonial-content strong {
-      color: var(--primary);
-      font-size: 1.1rem;
-    }
-    .testimonial-content p {
-      margin: 0.3rem 0 0 0;
-      color: var(--muted);
-    }
-
-    .certifications-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.2rem;
-      list-style: none;
-      padding: 0;
-    }
-    .certifications-list li {
-      background: var(--secondary);
-      color: var(--primary);
-      padding: 0.7rem 1.2rem;
-      border-radius: 16px;
-      font-weight: 600;
-      font-size: 1rem;
-      margin: 0;
-      box-shadow: 0 1px 4px rgba(26,34,56,0.04);
-    }
-
-    .contact-links a {
-      display: inline-block;
-      margin-right: 1.5rem;
-      color: var(--accent);
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 1.1rem;
-      transition: color 0.2s;
-    }
-    .contact-links a:hover {
-      color: var(--primary);
-      text-decoration: underline;
-    }
-
-    .contact-social {
-      margin-top: 1rem;
-    }
-    .contact-social a {
-      margin-right: 1.2rem;
-      color: var(--primary);
-      font-size: 1.4rem;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .contact-social a:hover {
-      color: var(--accent);
-    }
-
-    footer {
-      background: var(--primary);
-      color: #fff;
-      text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 1rem;
-      margin-top: 3rem;
-      letter-spacing: 0.5px;
-    }
-
-    @media (max-width: 900px) {
-      section {
-        padding: 2rem 1rem;
-      }
-      .project {
-        flex-direction: column;
-        gap: 1.2rem;
-      }
-      .project-photo {
-        width: 100%;
-        max-width: 350px;
-      }
-      .quick-facts {
-        flex-direction: column;
-        gap: 1rem;
-      }
-    }
-    @media (max-width: 600px) {
-      header {
-        padding: 2rem 0.5rem 1.5rem 0.5rem;
-      }
-      nav a {
-        margin: 0 0.5rem;
-        font-size: 0.98rem;
-      }
-      h2 {
-        font-size: 1.3rem;
-      }
-      .skills-list li, .tools-list li, .certifications-list li {
-        font-size: 0.95rem;
-        padding: 0.5rem 0.8rem;
-      }
-      .testimonial {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .testimonial-photo {
-        margin-bottom: 0.5rem;
-      }
-        }
-      </style>
+<!-- saved from url=(0035)https://fultondesign.net/#portfolio -->
+<html class="fa-events-icons-ready"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jeff Fulton | Product Marketing, Design, Development, Consulting</title>
+    <meta name="description" content="husband to liz. dad to 4 girls. phx. football fan. i design, code and consult... playing my little part in something big.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./sample_files/css2" rel="stylesheet">
+    <script type="text/javascript" async="" src="./sample_files/js"></script><script async="" src="./sample_files/analytics.js.download"></script><script src="./sample_files/d44d29ab61.js.download"></script><link href="./sample_files/d44d29ab61.css" media="all" rel="stylesheet">
+    <script src="./sample_files/jquery.min.js.download"></script>
+    <link rel="stylesheet" href="./sample_files/jquery.fancybox.min.css">
+    <script src="./sample_files/jquery.fancybox.min.js.download"></script>
+    <script>
+        $(document).ready(function() {
+            $("a").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function() {
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+    </script>
+    <script src="./sample_files/wow.min.js.download"></script>
+          <script>
+              new WOW().init();
+          </script>
+    <link rel="stylesheet" type="text/css" href="./sample_files/animate.css">
+    <link rel="stylesheet" href="./sample_files/feather-cp.css">
+    <link rel="stylesheet" href="./sample_files/jf.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://fultondesign.net/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://fultondesign.net/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://fultondesign.net/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://fultondesign.net/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://fultondesign.net/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://fultondesign.net/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://fultondesign.net/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://fultondesign.net/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://fultondesign.net/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://fultondesign.net/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://fultondesign.net/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://fultondesign.net/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://fultondesign.net/favicon-16x16.png">
+    <link rel="manifest" href="https://fultondesign.net/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="canonical" href="https://fultondesign.net/">
+    <link rel="shortlink" href="https://fultondesign.net/">
+    <meta name="twitter:card" content="photo">
+    <meta name="twitter:site" content="@jefffulton">
+    <meta name="twitter:title" content="Jeff Fulton">
+    <meta name="twitter:url" content="https://fultondesign.net/">
+    <meta name="twitter:image" content="https://fultondesign.net/images/jfulton-social.jpg">
+    <meta property="og:url" content="https://fultondesign.net/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Jeff Fulton">
+    <meta property="og:image" content="https://fultondesign.net/images/jfulton-social.jpg">
 </head>
 <body>
-
-<header>
-  <img src="./images/himanshu.jpg" alt="Himanshu Pal Photo">
-  <h1>Himanshu Pal</h1>
-  <h2>IT Project Manager | Freelancer | Digital Transformation Leader</h2>
-  <div class="header-contact">
-    Based in Delhi, India &middot; Available Worldwide<br>
-    Email: <a href="mailto:himanshuirctc7@gmail.com" style="color:#fff;text-decoration:underline;">himanshuirctc7@gmail.com</a> &middot; Phone: +91-7905888072
-  </div>
-  <div class="header-links">
-    <a href="https://www.linkedin.com/in/himanshu-pal-8b7872100/" target="_blank">LinkedIn</a>
-    <a href="https://www.upwork.com/freelancers/~01086fddd2b624663f" target="_blank">Upwork</a>
-    <a href="#contact">Contact</a>
-  </div>
-</header>
-<nav style="margin-top:1.2rem;">
-  <ul style="list-style:none;display:flex;justify-content:center;gap:1.2rem;padding:0;margin:0;">
-    <li><a href="#about">About</a></li>
-    <li><a href="#key-skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#testimonials">Testimonials</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<section id="about">
-  <h2>About</h2>
-  <div class="about-summary">
-    Experienced Freelance IT Project Manager with over 10 + years of delivering software, mobile,
-and web development projects across industries like travel, healthcare, e-commerce, and SaaS. I
-specialize in managing cross-functional remote teams, streamlining agile workflows, and ensuring
-high-quality project delivery on time and within budget.
-  </div>
-  <div class="quick-facts">
-    <div class="quick-fact">
-      <strong>10+</strong>
-      <span>Years Experience</span>
+    <div class="navbar">
+        <div class="menu icon-menu"></div>
     </div>
-    <div class="quick-fact">
-      <strong>30+</strong>
-      <span>Projects Delivered</span>
+    <nav role="navigation">
+        <ul>
+            <li><a href="https://fultondesign.net/#about">About</a></li>
+            <li><a href="https://fultondesign.net/#references">Testimonials</a></li>
+            <li><a href="https://fultondesign.net/#portfolio">Work</a></li>
+            <li><a href="https://fultondesign.net/#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="logo"><img src="./sample_files/logo-new.png" alt="Jeff Fulton" class="animated fadeIn"></div>
+    <div id="wrap">
+        <div class="hero__image">
+        </div>
+        <div id="about" class="content">
+            <div class="container">
+                <img src="./images/himanshu.jpg" alt="Himanshu Pal" class="headshot wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
+                <div class="aboutText"><h1>Jeff Fulton</h1>
+
+                    <h2 class="jobtitle">Product Marketing</h2>
+                <p>Thanks for stopping by. I'd like to give you a little info about myself.<br></p>
+<p>I’m an experienced marketing leader as a Creative Director, Designer, Developer, Producer, and Presenter. I have a strong skill-set in Photoshop, Illustrator and can speak HTML, CSS, PHP, Craft CMS, WordPress, and some Spanish — all with a little bit of a Southern accent — and designed and delivered hundreds of thousands of dollars worth of print and environmental installations, and produced over one thousand hours of live video.</p>
+<p>I am currently accepting freelance. If you have questions or need help in any way, <a href="mailto:jeff@fultondesign.net">let's connect</a>.</p>
+                <h3>Certifications</h3>
+                <ul><li><strong>Google UX Design Certificate</strong></li><li><strong>LinkedIn Top 5%</strong> - Photoshop, InDesign, HTML, CSS</li><li><strong>LinkedIn Top 15%</strong> - Illustrator, SEO</li></ul>
+                    <p class="resume wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+                        <a href="https://fultondesign.net/upload/jfulton-resume2024a.pdf" target="_blank"><i class="fa fa-download"></i> &nbsp; Download Resume</a></p></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div id="references" class="content">
+            <div class="container">
+                <h2>Testimonials</h2>
+                                  <p><a href="https://www.linkedin.com/in/jfultondesign" target="_blank">— more available on LinkedIn —</a></p>
+                                                          <div class="reference">
+                          <div class="imgcontainer"><img src="./sample_files/referral-marcus.jpg" alt="Marcus Neto"></div>
+                          <div class="referenceText">
+                              <h3>Marcus Neto</h3>
+                              <h4>Founder/CEO<span class="referenceTablet"> | </span><a href="https://bluefishds.com/" target="_blank">Blue Fish Design Studio</a></h4>
+                              <p>“Jeff is an amazing designer. His attention to detail and creativity are an asset to his clients; and his heart is always in the project.”</p>
+                          </div>
+                      </div>
+                                        <div class="reference">
+                          <div class="imgcontainer"><img src="./sample_files/referral-mike.jpg" alt="Mike Tranckino"></div>
+                          <div class="referenceText">
+                              <h3>Mike Tranckino</h3>
+                              <h4>CEO<span class="referenceTablet"> | </span><a href="https://trustedlendingcenter.com/" target="_blank">Trusted Lending Center</a></h4>
+                              <p>“I have searched for several years to find the right knowledge, passion, and skill and am more impressed with each step of Jeff's work.”</p>
+                          </div>
+                      </div>
+                                        <div class="reference">
+                          <div class="imgcontainer"><img src="./sample_files/rrussell.jpg" alt="Ryan Russell"></div>
+                          <div class="referenceText">
+                              <h3>Ryan Russell</h3>
+                              <h4>Sr. Director, Business Transformation<span class="referenceTablet"> | </span><a href="https://theveeya.com/" target="_blank">Veeya</a></h4>
+                              <p>"Jeff is a class act through and through. He delivers thoughtful input, clear direction and his work is infused with years of experience. He consistently drives improvement throughout the organization, genuinely leading by example."</p>
+                          </div>
+                      </div>
+                                  <div class="clear"></div>
+            </div>
+        </div>
+        <div class="transitionRibbon"></div>
+        <div id="portfolio" class="content">
+            <div class="container">
+                <h2>Portfolio</h2>
+                                  <p><a href="https://dribbble.com/jefffulton" target="_blank">— more available on Dribbble —</a></p>
+                                                          <div class="item wow flipInY" style="visibility: visible; animation-name: flipInY;">
+                          <a href="./sample_files/brickyard.jpg" data-fancybox=""><img src="./sample_files/brickyard.jpg" alt="The Brickyard"><strong>The Brickyard </strong></a>
+                          <hr>Branding<br><i>Winona, MN</i></div>
+                                        <div class="item wow flipInY" style="visibility: visible; animation-name: flipInY;">
+                          <a data-fancybox="" href="https://www.youtube.com/embed/V9Y24UAgZsI"><img src="./sample_files/legacy-awards.jpg" alt="Legacy Awards"><strong>Legacy Awards </strong></a>
+                          <hr>Event Production<br><i>Tempe, AZ</i></div>
+                                        <div class="item wow flipInY" style="visibility: visible; animation-name: flipInY;">
+                          <a href="./sample_files/legacy-s48.jpg" data-fancybox=""><img src="./sample_files/legacy-s48.jpg" alt="State48/Legacy (Collab)"><strong>State48/Legacy (Collab) </strong></a>
+                          <hr>Apparel<br><i>Phoenix, AZ</i></div>
+                                        <div class="item wow flipInY" style="visibility: visible; animation-name: flipInY;">
+                          <a href="https://connective.church/" target="_blank"><img src="./sample_files/connective.jpg" alt="Connective Church"><strong>Connective Church <i class="fa fa-external-link"></i></strong></a>
+                          <hr>Branding, Web Development<br><i>Queen Creek, AZ</i></div>
+                                        <div class="item wow flipInY" style="visibility: visible; animation-name: flipInY;">
+                          <a data-fancybox="" href="https://www.youtube.com/embed/tV4jkKrk4wo"><img src="./sample_files/lighthouse.jpg" alt="Lighthouse School"><strong>Lighthouse School </strong></a>
+                          <hr>Animation<br><i>San Antonio, TX</i></div>
+                                        <div class="item wow flipInY" style="visibility: visible; animation-name: flipInY;">
+                          <a href="./sample_files/ch.jpg" data-fancybox=""><img src="./sample_files/ch.jpg" alt="CityHope Outreach"><strong>CityHope Outreach </strong></a>
+                          <hr>Branding<br><i>Daphne, AL</i></div>
+                                        <div class="item wow flipInY" style="visibility: hidden; animation-name: none;">
+                          <a href="./sample_files/communityschool.jpg" data-fancybox=""><img src="./sample_files/communityschool.jpg" alt="The Community School"><strong>The Community School </strong></a>
+                          <hr>Branding<br><i>Daphne, AL</i></div>
+                                        <div class="item wow flipInY" style="visibility: hidden; animation-name: none;">
+                          <a href="./sample_files/vertex.jpg" data-fancybox=""><img src="./sample_files/vertex.jpg" alt="Vertex Education"><strong>Vertex Education </strong></a>
+                          <hr>Branding, Signage<br><i>Chandler, AZ</i></div>
+                                        <div class="item wow flipInY" style="visibility: hidden; animation-name: none;">
+                          <a data-fancybox="" href="https://www.youtube.com/embed/PrXGGpejRkQ"><img src="./sample_files/vertex-animation.jpg" alt="Vertex - Values"><strong>Vertex - Values </strong></a>
+                          <hr>Animation<br><i>Chandler, AZ</i></div>
+                                        <div class="item wow flipInY" style="visibility: hidden; animation-name: none;">
+                          <a href="./sample_files/legacy-banners.jpg" data-fancybox=""><img src="./sample_files/legacy-banners.jpg" alt="Legacy Traditional Schools"><strong>Legacy Traditional Schools </strong></a>
+                          <hr>Banners<br><i>Phoenix, AZ</i></div>
+                                        <div class="item wow flipInY" style="visibility: hidden; animation-name: none;">
+                          <a href="./sample_files/connective-tshirt.jpg" data-fancybox=""><img src="./sample_files/connective-tshirt.jpg" alt="Connective Church"><strong>Connective Church </strong></a>
+                          <hr>Apparel<br><i>Queen Creek, AZ</i></div>
+                                        <div class="item wow flipInY" style="visibility: hidden; animation-name: none;">
+                          <a href="./sample_files/jungle-hospital.jpg" data-fancybox=""><img src="./sample_files/jungle-hospital.jpg" alt="Jungle Hospital"><strong>Jungle Hospital </strong></a>
+                          <hr>Branding<br><i>Rio Viejo, Honduras</i></div>
+                              <div class="clear"></div>
+            <p class="up"><a href="https://fultondesign.net/#wrap"><i class="fa fa-angle-up"></i></a></p>
+            <p class="resume wow fadeInDown" style="visibility: hidden; animation-name: none;">
+                <a href="https://fultondesign.net/upload/jfulton-resume2024a.pdf" target="_blank"><i class="fa fa-download"></i> &nbsp; Download Resume</a></p>
+            </div>
+        </div>
+        <div id="contact" class="content">
+            <div class="container">
+                <h3>Let's connect.</h3>
+                                <p class="phone"><a href="https://www.linkedin.com/in/jfultondesign" target="_blank"><i class="fa fa-brands fa-linkedin"></i> &nbsp; LinkedIn</a></p>
+                                                    <p class="phone"><a href="https://dribbble.com/jefffulton" target="_blank"><i class="fa fa-brands fa-dribbble"></i> &nbsp; Dribbble</a></p>
+                                                  <p class="phone"><a href="mailto:jeff@fultondesign.net" target="_blank"><i class="fa fa-envelope-square"></i> &nbsp; jeff@fultondesign.net</a></p>
+                                <p class="phone"><a href="tel:2514226679"><i class="fa fa-phone"></i> &nbsp; 251.422.6679</a></p>
+            </div>
+        </div>
+        <footer class="content">
+          <div class="container">
+              <div class="copyright">
+                  <a href="https://fultondesign.net/#wrap">
+                      <img src="./sample_files/logo-new.png" alt="Jeff Fulton" class="footerLogo"></a>© 2025 Jeff Fulton | Product Marketing, Design, Development, Consulting. Made with <a href="http://craftcms.com/" target="_blank">Craft CMS</a>. <br class="mobileBreak"><a href="https://fultondesign.net/madlib.html">Wanna do a madlib?</a>
+              </div>
+          </div>
+      </footer>
     </div>
-    <div class="quick-fact">
-      <strong>10+</strong>
-      <span>Industries Served</span>
-    </div>
-    <div class="quick-fact">
-      <strong>100%</strong>
-      <span>Client Satisfaction</span>
-    </div>
-  </div>
-</section>
+    <script>
+        $('.menu').click(function(){
+          $('.navbar').toggleClass('drop');
+          $('.logo').toggleClass('logoDrop');
+          $('.logo img').toggleClass('logoImageShrink');
+          $(this).toggleClass('icon-menu');
+          $(this).toggleClass('icon-cross');
+          $('nav').toggleClass('down');
+        });
+    </script>
+     <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-42333463-3', 'auto');
+        ga('send', 'pageview');
+    </script>
 
-<section id="key-skills">
-  <h2>Key Skills</h2>
-  <ul>
-    <li>Project Planning &amp; Execution</li>
-    <li>Agile &amp; Scrum Methodologies</li>
-    <li>Risk &amp; Resource Management</li>
-    <li>Cross-Platform Development Oversight (Flutter, React Native)</li>
-    <li>Team Leadership (Developers, Designers, QA)</li>
-    <li>Client Reporting &amp; Documentation</li>
-    <li>DevOps Basics &amp; CI/CD Coordination</li>
-    <li>SEO &amp; Digital Product Launches</li>
-  </ul>
-</section>
 
-<section id="skills">
-  <h2>Tools & Technologies</h2>
-  <div style="margin-bottom:1.2rem;">
-    <strong>Project Management:</strong>
-    <ul class="skills-list">
-      <li>Agile / Scrum / Kanban</li>
-      <li>Jira</li>
-      <li>ClickUp</li>
-      <li>Asana</li>
-      <li>Trello</li>
-      <li>MS Project</li>
-    </ul>
-    <strong>Technical:</strong>
-    <ul class="skills-list">
-      <li>Python</li>
-      <li>JavaScript</li>
-      <li>Java</li>
-      <li>React</li>
-      <li>Flutter</li>
-      <li>Node.js</li>
-      <li>Docker</li>
-      <li>Kubernetes</li>
-      <li>AWS</li>
-      <li>GCP</li>
-      <li>Firebase</li>
-      <li>GitLab</li>
-      <li>Bitbucket</li>
-      <li>Jenkins</li>
-      <li>GitHub Actions</li>
-    </ul>
-    <strong>Collaboration & DevOps:</strong>
-    <ul class="tools-list">
-      <li>Slack</li>
-      <li>Zoom</li>
-      <li>Notion</li>
-      <li>Figma</li>
-      <li>BrowserStack</li>
-    </ul>
-  </div>
-  <strong>Certifications:</strong>
-  <ul class="certifications-list">
-    <li>PMP®</li>
-    <li>Scrum Master Certified (SMC®)</li>
-    <li>Agile PM (Coursera/LinkedIn)</li>
-  </ul>
-</section>
-
-<section id="projects">
-  <!-- <section id="project-types"> -->
-  <h2>🚀 Projects Delivered</h2>
-  <ul>
-    <li>SaaS Platforms, Live Streaming, E-commerce</li>
-    <li>Health & Wellness, Banking & Finance</li>
-    <li>Travel & Hospitality, Real Estate</li>
-    <li>CRM, ERP, HR Management Apps</li>
-    <li>Social Networking, On-Demand Services</li>
-    <li>IoT, DevOps, Chat Applications, Survey Systems</li>
-  </ul>
-<!-- </section> -->
-  <h2>Featured Projects</h2>
-
-  <div class="project">
-    <img src="./images/split_stay.png" alt="SplitStay Project" class="project-photo">
-    <div class="project-details">
-      <h3>SplitStay – Social Travel Platform</h3>
-      <p>
-        <strong>Role:</strong> Project Manager & Product Owner<br>
-        <strong>Tech:</strong> Flutter, Firebase, Google Maps API<br>
-        <strong>Summary:</strong> Led a distributed team to build a mobile-first platform for collaborative travel planning, real-time itinerary sharing, and group expense management. Achieved 5,000+ downloads in 6 months.
-      </p>
-      <!-- <div class="project-links">
-        <a href="#">Case Study</a>
-        <a href="#">App Store</a>
-      </div> -->
-    </div>
-  </div>
-
-  <div class="project">
-    <img src="./images/tele_health.png" alt="ObserVA Project" class="project-photo">
-    <div class="project-details">
-      <h3>ObserVA – Medical Research App</h3>
-      <p>
-        <strong>Role:</strong> Technical Project Manager<br>
-        <strong>Tech:</strong> React Native, GCP, HIPAA Compliance<br>
-        <strong>Summary:</strong> Managed the end-to-end delivery of a secure mobile app for patient data collection in clinical studies. Integrated real-time analytics and ensured regulatory compliance.
-      </p>
-      <!-- <div class="project-links">
-        <a href="#">Case Study</a>
-      </div> -->
-    </div>
-  </div>
-
-  <div class="project">
-    <img src="./images/ecommerce.png" alt="TaskFair Project" class="project-photo">
-    <div class="project-details">
-      <h3>TaskFair – Freelance Marketplace</h3>
-      <p>
-        <strong>Role:</strong> Delivery Manager<br>
-        <strong>Tech:</strong> Node.js, AWS, Stripe API<br>
-        <strong>Summary:</strong> Oversaw the launch of a secure e-commerce platform enabling users to buy products such as clothes and accessories. Implemented integrated payments, messaging, and review systems, reducing time-to-market by 30% through agile sprints.
-      </p>
-      <!-- <div class="project-links">
-        <a href="#">Live Demo</a>
-      </div> -->
-    </div>
-  </div>
-</section>
-
-<section id="testimonials">
-  <h2>Client Testimonials</h2>
-  <div class="testimonial">
-    <img src="./images/Roberto.jpeg" class="testimonial-photo" alt="Roberto">
-    <div class="testimonial-content">
-      <strong>Roberto Baldizon – CTO</strong>
-      <p>"I enjoyed working with Himanshu Pal and can’t recommend him highly enough. His hard work, dedication, and sense of responsibility were evident from day one. Himanshu maintained transparent and clear communication throughout the project, making the process smooth and collaborative. His flexibility in adapting to our needs and timelines was truly appreciated, and the quality of work he delivered was outstanding. If you’re looking for someone reliable and results-driven, Himanshu is the person to go to. Thank you, Himanshu, for your excellent work!"</p>
-  </div>
-  </div>
-  <div class="testimonial">
-    <img src="./images/Michael.jpeg" class="testimonial-photo" alt="Michael">
-    <div class="testimonial-content">
-      <strong>Michael Lapunzina</strong>
-      <p>"I am delighted to express my utmost satisfaction and gratitude for Himanshu’s dedicated team’s exceptional work and unwavering support. Their commitment to excellence, professionalism, and tireless efforts exceeded our expectations. Throughout the process, the team exhibited a high level of expertise and technical proficiency, showcasing their ability to easily navigate complex challenges. One of the standout qualities of Himanshu and his team is their responsiveness and open communication. This level of transparency fostered a collaborative and trusting relationship, making the entire experience smooth and enjoyable. The team’s dedication to delivering a user-friendly and innovative patient engagement app was evident in the final product. It is a testament to the team’s commitment to quality and relentless pursuit of excellence. Moreover, Himanshu and his team provided unparalleled support even after the app’s launch."</p>
-  </div>
-  </div>
-  <div class="testimonial">
-    <img src="./images/Lee.jpeg" class="testimonial-photo" alt="Lee">
-    <div class="testimonial-content">
-      <strong>Lee Paxman Clarke</strong>
-      <p>"We have worked with Himanshu on multiple projects now and look forward to continuing to collaborate. Himanshu always responds promptly to our questions and is very professional. We have worked with other people before who have not provided as good of a service as Himanshu so we are glad to have found a reliable and honest partner for developing projects. We have worked on app development, designing custom UI/UX and ongoing app maintenance."</p>
-  </div>
-  </div>
-  <div class="testimonial">
-    <img src="./images/Frank.jpeg" class="testimonial-photo" alt="Frank">
-    <div class="testimonial-content">
-      <strong>Frank Koungoue</strong>
-      <p>"We are really proud of what we have created with Himanshu and the team. Thank you for the help and support with this project."</p>
-  </div>
-  </div>
-</section>
-
-<section id="what-i-can-do">
-  <h2>What I Can Do For You</h2>
-  <ul>
-    <li>✅ Planning and implementing project architecture and features</li>
-    <li>✅ End-to-end coding and ongoing support</li>
-    <li>✅ Server backend API & web admin panel development</li>
-    <li>✅ Code review, bug fixing, and app support</li>
-    <li>✅ Collaborative teamwork with developers</li>
-    <li>✅ Fast, clear communication & 60 days of free tech support after delivery</li>
-    <li>✅ Trusted by international clients</li>
-  </ul>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>
-    Ready to accelerate your next project? I’m available for short-term consulting, product launches, and long-term leadership roles. Let’s connect!
-  </p>
-  <p class="contact-links">
-    <a href="mailto:himanshuirctc7@gmail.com">📧 Email Me</a>
-    <a href="tel:+917905888072">📞 Call Now</a>
-  </p>
-  <div class="contact-social">
-    <a href="https://www.linkedin.com/in/himanshu-pal-8b7872100/" target="_blank" title="LinkedIn">
-      <svg width="24" height="24" fill="currentColor" style="vertical-align:middle;"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.59v4.74z"/></svg>
-    </a>
-    <a href="https://www.upwork.com/freelancers/~01086fddd2b624663f" target="_blank" title="Upwork">
-      <svg width="24" height="24" fill="currentColor" style="vertical-align:middle;"><path d="M20.5 2h-17C2.12 2 1 3.12 1 4.5v15C1 20.88 2.12 22 3.5 22h17c1.38 0 2.5-1.12 2.5-2.5v-15C23 3.12 21.88 2 20.5 2zm-7.5 14.5c-2.21 0-4-1.79-4-4V8h2v4.5c0 1.1.9 2 2 2s2-.9 2-2V8h2v4.5c0 2.21-1.79 4-4 4zm7-4.5h-2v2c0 .55-.45 1-1 1s-1-.45-1-1v-2h-2V8h2v2c0 .55.45 1 1 1s1-.45 1-1V8h2v4z"/></svg>
-    </a>
-  </div>
-</section>
-
-<footer>
-  <p>© 2025 Himanshu Pal. All rights reserved.</p>
-</footer>
-
-</body>
-</html></a>
+</body></html>

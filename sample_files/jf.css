@@ -1,0 +1,535 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+html, body {
+    height: 100%;
+}
+body {
+    background: #d9ddde;
+    color: #333333;
+    font-size: 17px;
+    font-family: "DM Sans", sans-serif;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+a:hover {
+    color: #61b860;
+}
+.clear {
+    clear: both;
+}
+p {
+    margin-bottom: 30px;
+}
+h1, h2, h3 {
+    font-weight: 700;
+    margin-bottom: 30px;
+    font-family: "Eczar", serif;
+}
+h1 {
+    font-size: 2.4em;
+    margin-bottom: 5px;
+}
+h2 {
+    font-size: 2em;
+    margin-bottom: 0px;
+}
+h2.jobtitle {
+    font-size: 1.2em;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #61b860;
+    margin-bottom: 30px;
+}
+h3 {
+    font-size: 2em;
+}
+#wrap {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #fff;
+}
+.content {
+    padding: 50px 0;
+    background-color: #fff;
+}
+.container {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1400px;
+}
+.ribbonBg {
+    background-image: url(images/ribbon-bg.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    padding-top: 80px;
+}
+.hero__image {
+    width: 100%;
+    height: 100%;
+    background-image: url(images/evenstevens-girls-bg.jpg);
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+.logo {
+    background-image: url(images/logo-bg.png);
+    background-position: top;
+    position: absolute;
+    width: 165px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 58%;
+    padding-top: 30px;
+    transition: all 200ms ease 0s;
+}
+.logo img {
+    transition: all 1s ease 0s;
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    animation-delay: 1s;
+}
+#about {
+    background-image: url(images/about-bg.png);
+    background-position: top center;
+    background-repeat: repeat-y;
+    padding-top: 80px;
+}
+#about .container {
+    width: 960px;
+}
+#about h3 {
+    padding-top: 20px;
+    font-size:1.5em;
+    color: #61b860;
+}
+#about ul {
+    margin-bottom: 50px;
+}
+#about li {
+    margin-left: 30px;
+    padding-left: 10px;
+}
+.aboutText {
+    float: right;
+    width: 600px;
+    padding: 10px;
+    padding-left: 50px;
+    text-align: left;
+    line-height: 1.8em;
+}
+.aboutText a {
+    font-weight: bold;
+}
+.headshot {
+    float: left;
+    width: 270px;
+    margin-right: 30px;
+}
+#references {
+    background: #61b860;
+}
+#references a:hover {
+    color: #ffffff;
+}
+.reference {
+    float: left;
+    width: 27%;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin: 0 3%;
+    border-bottom-width: 0px;
+    line-height: 1.5em;
+}
+.reference div.imgcontainer {
+    width: 150px;
+    height: auto;
+    margin: auto;
+}
+.reference div.referenceText {
+    line-height: 1.5em;
+}
+.reference h3 {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin: 0 auto;
+}
+.reference h4 {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+.reference a {
+    display: block;
+    color: #d9ddde;
+}
+.reference a:hover {
+    color: #333333;
+}
+.reference div.imgcontainer img {
+    width: 99%;
+    height: auto;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border: 3px solid #d9ddde;
+    background: #d9ddde;
+    margin-bottom: 10px;
+}
+.reference p {
+}
+.referenceTablet {
+    display: none;
+}
+.transitionRibbon {
+    background-image: url(images/transition.png);
+    background-repeat: repeat-x;
+    background-color: #eee;
+    height: 6px;
+    width: 100%;
+}
+#portfolio {
+    background-image: url(images/portfolio-bg.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #eee;
+}
+#portfolio h2 {
+    margin-bottom: 0;
+}
+#portfolio i {
+    font-size: .8em;
+}
+#portfolio p a {
+    color: #61b860;
+}
+#portfolio p a:hover {
+    color: black;
+}
+#portfolio hr {
+    border: 0px dotted #ddd;
+    border-top-width: 1px;
+    margin: 4px 0;
+}
+#portfolio .item a {
+    color: #333;
+    font-size: 1.2em;
+}
+#portfolio .item a:hover {
+    color: #61b860;
+}
+#portfolio .item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+#portfolio .up {
+    margin: 30px 0;
+    font-size: 2em;
+}
+#portfolio .item {
+    float: left;
+    font-size: 16px;
+    width: 29%;
+    padding: 1%;
+    margin: 1%;
+    height: auto;
+    background: #fff;
+    text-align: center;
+    color: #777;
+    -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,.2);
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.2);
+}
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+.embed-container iframe, .embed-container object, .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#contact {
+    background-image: url(images/footer-bg.png);
+    background-position: top center;
+    background-repeat: repeat-x;
+    background-color: #eee;
+    color: white;
+    width: 100%;
+}
+#contact h3 {
+    margin: 30px auto;
+}
+#contact a {
+    color: #61b860;
+}
+#contact a:hover {
+    color: white;
+}
+#social {
+    margin-bottom: 40px;
+}
+.socialHandle {
+    font-size: 1.2em;
+    margin-bottom: 50px;
+    color: #777;
+}
+#social .fa {
+    font-size: 4.6em;
+    margin: 0 8px;
+}
+.phone {
+    font-size: 1.8em;
+}
+footer {
+    background-image: url(images/footer.png);
+    background-position: top center;
+    background-repeat: repeat-x;
+    background-color: #333 !important;
+    color: #888;
+    font-size: .7em;
+    line-height: 40px;
+    text-align: right;
+}
+.copyright a {
+    text-decoration: underline;
+    color: #888;
+}
+.copyright a:hover {
+    text-decoration: none;
+    color: #61b860;
+}
+.copyright img.footerLogo {
+    float: left;
+    height: 40px;
+    width: auto;
+    display: block;
+    margin-right: 10px;
+    background-color: #61b860;
+    padding: 3px;
+}
+.mobileHide {
+    display: inline;
+}
+.mobileBreak {
+    display: none;
+}
+.resume a {
+    border: 2px solid #333333;
+    font-size: 1.1em;;
+    font-weight: normal !important;
+    color: #333333 !important;
+    padding: 6px 18px;
+    -webkit-border-radius: 100vmax;
+    border-radius: 100vmax;
+}
+.resume a:hover {
+    background: #61b860;
+    border-color: #61b860;
+    color: #ffffff !important;
+}
+
+/* Menu */
+[class*="icon"] {
+    display: block;
+    color: #333;
+    font-size: 2.5em;
+}
+[class*="icon"]:hover {
+    color: #fff;
+}
+.navbar {
+    background-image: url(images/menu-bg.png);
+    background-position: bottom;
+    width: 165px;
+    margin: 0 auto;
+    height: 70px;
+    padding-top: 18px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    transition: all 200ms ease 0s;
+    cursor: pointer;
+}
+.menu {
+    position: relative;
+}
+.icon-menu {
+}
+nav {
+    position: absolute;
+    background: #61b860;
+    width: 100%;
+    top: -52px;
+    z-index: 999;
+    margin: auto;
+    margin-bottom:0px;
+    padding-bottom: 30px;
+    transition: all 200ms ease 0s;
+}
+nav li {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    list-style: none;
+    text-align: center;
+    display: inline-block;
+    margin: 0;
+    padding: 0 10px;
+    border-right: 1px solid rgba(255,255,255,.4);
+}
+nav li a {
+    color: #333;
+    text-decoration: none;
+}
+nav li a:hover {
+    color: #fff;
+}
+nav li:last-child {
+    border-right-width: 0px;
+}
+.down {
+    top: 0;
+    padding-top: 30px;
+}
+.drop {
+    top: 79px;
+}
+.logoDrop {
+    height: 120px;
+}
+.logoImageShrink {
+    width: 70px;
+    height: auto;
+}
+
+@media only screen and (max-width: 960px) {
+    .container, #about .container {
+        width: 90%;
+        padding: 0 5%;
+    }
+    .hero__image, #portfolio {
+        background-attachment: scroll;
+    }
+    #about {
+        background-image: url(images/menu-bg.png);
+        background-position: center -420px ;
+        background-repeat: no-repeat;
+        padding: 0;
+    }
+    .headshot {
+        float: none;
+        margin: 30px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .aboutText {
+        float: none;
+        width: 100%;
+        padding: 30px 0;
+        padding-left: 0;
+        text-align: left;
+    }
+    .aboutText h1 {
+        margin-bottom: 20px;
+    }
+    .center {
+        text-align: center !important;
+    }
+    .resume {
+        text-align: center;
+        margin: 10px auto;
+    }
+    .reference {
+        margin: 0;
+        margin-bottom: 40px;
+        padding: 0;
+        padding-bottom: 40px;
+        border-bottom: 4px solid rgba(0,0,0,.1);
+        float: none;
+        width: 100%;
+    }
+    .referenceTablet {
+        display: inline;
+        color: rgba(0,0,0,.3);
+    }
+    .reference a {
+        display: inline;
+    }
+    #portfolio {
+        text-align: center;
+        width: 100%;
+    }
+    #portfolio .item {
+        float: none;
+        width: 93%;
+        max-width: 400px;
+        padding: 3%;
+        padding-bottom: 30px;
+        margin: 30px auto;
+        margin-top: 0;
+        height: auto;
+    }
+    #portfolio .item img {
+        margin-bottom: 10px;
+    }
+    #social .fa {
+        font-size: 3.5em;
+    }
+    .phone {
+        font-size: 1.2em;
+    }
+    footer {
+        text-align: center;
+        line-height: 1.5em;
+    }
+    .copyright img.footerLogo {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+    }
+    .mobileHide {
+        display: none;
+    }
+    .mobileBreak {
+        display: inherit;
+    }
+}
+@media only screen and (max-width: 640px) {
+    nav li {
+        font-size: 14px;
+        padding: 0 6px;
+        letter-spacing: normal;
+    }
+    .referenceTablet {
+        display: none;
+    }
+    .reference a {
+        display: block;
+    }
+}
