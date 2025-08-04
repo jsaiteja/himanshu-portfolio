@@ -149,6 +149,62 @@
         footer .container .copyright {
             text-align: center;
         }
+
+        /* Add this CSS for project section layout */
+        #projects .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .project {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 32px;
+        }
+
+        .project-image {
+            flex: 1 1 320px;
+            max-width: 340px;
+            margin-right: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-image img {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 8px;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+            background: #fafafa;
+        }
+
+        .project-details {
+            flex: 2 1 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            /* Ensure project description is left-aligned */
+        }
+
+        @media (max-width: 900px) {
+            .project {
+                flex-direction: column;
+            }
+
+            .project-image,
+            .project-details {
+                max-width: 100%;
+                margin-right: 0;
+            }
+
+            .project-image {
+                margin-bottom: 18px;
+            }
+        }
     </style>
 </head>
 
@@ -235,86 +291,78 @@
             </div>
         </div>
         <div class="transitionRibbon"></div>
-        <!-- <div id="portfolio" class="content">
+
+        <!-- Projects Section -->
+        <div id="projects" class="content">
             <div class="container">
-                <h2>Portfolio</h2>
-                <p><a href="https://dribbble.com/jefffulton" target="_blank">— more available on Dribbble —</a></p>
-                <div class="item wow flipInY" style="visibility: visible; animation-name: flipInY;">
-                    <a href="./sample_files/brickyard.jpg" data-fancybox=""><img src="./sample_files/brickyard.jpg"
-                            alt="The Brickyard"><strong>The Brickyard </strong></a>
-                    <hr>Branding<br><i>Winona, MN</i>
+                <h2>Projects</h2>
+                <!-- Project 1 -->
+                <div class="project">
+                    <div class="project-image">
+                        <img src="./images/proj1.png" alt="Autopilot Workflow Management">
+                    </div>
+                    <div class="project-details">
+                        <h3><a href="https://autopilot.io/" target="_blank">Simple Process & Workflow Management</a>
+                        </h3>
+                        <p>
+                            Built a robust workflow and task management platform, allowing users to create teams, assign, and track tasks efficiently. The frontend was developed in React, with a Node.js backend and MongoDB for data storage. I contributed as an assistant frontend developer, focusing on user interface enhancements and dynamic content rendering.
+                        </p>
+                        <!-- <ul>
+                            <li><strong>Tech Stack:</strong> React, Node.js, MongoDB</li>
+                            <li><strong>Duration:</strong> 6 months</li>
+                        </ul> -->
+                    </div>
                 </div>
-                <div class="item wow flipInY" style="visibility: visible; animation-name: flipInY;">
-                    <a data-fancybox="" href="https://www.youtube.com/embed/V9Y24UAgZsI"><img
-                            src="./sample_files/legacy-awards.jpg" alt="Legacy Awards"><strong>Legacy Awards
-                        </strong></a>
-                    <hr>Event Production<br><i>Tempe, AZ</i>
+                <!-- Project 2 -->
+                <div class="project">
+                    <div class="project-image">
+                        <img src="./images/proj2.png" alt="NEMT Vehicle Management">
+                    </div>
+                    <div class="project-details">
+                        <h3><a href="http://nemtsolutions.com/signin" target="_blank">Vehicle Management Platform</a></h3>
+                        <p>
+                            Developed a comprehensive vehicle and transport management solution for private organizations. Leveraged React and Redux for a responsive frontend and PostgreSQL for reliable data management. My role focused on frontend development, ensuring seamless flow management for transporters.
+                        </p>
+                        <!-- <ul>
+                            <li><strong>Tech Stack:</strong> React, Redux, Node.js, PostgreSQL</li>
+                            <li><strong>Duration:</strong> 6 months</li>
+                        </ul> -->
+                    </div>
                 </div>
-                <div class="item wow flipInY" style="visibility: visible; animation-name: flipInY;">
-                    <a href="./sample_files/legacy-s48.jpg" data-fancybox=""><img src="./sample_files/legacy-s48.jpg"
-                            alt="State48/Legacy (Collab)"><strong>State48/Legacy (Collab) </strong></a>
-                    <hr>Apparel<br><i>Phoenix, AZ</i>
+                <!-- Project 3 -->
+                <div class="project">
+                    <div class="project-image">
+                        <img src="./images/proj3.png" alt="NGO Management Website">
+                    </div>
+                    <div class="project-details">
+                        <h3>NGO Management Platform</h3>
+                        <p>
+                            Designed and implemented a theme-centric website for NGO registrations and information management. The application was built with React and Node.js, using MongoDB for backend storage. I was responsible for frontend development, focusing on user experience and content presentation.
+                        </p>
+                        <!-- <ul>
+                            <li><strong>Tech Stack:</strong> React, Node.js, MongoDB</li>
+                            <li><strong>Duration:</strong> 8 months</li>
+                        </ul> -->
+                    </div>
                 </div>
-                <div class="item wow flipInY" style="visibility: visible; animation-name: flipInY;">
-                    <a href="https://connective.church/" target="_blank"><img src="./sample_files/connective.jpg"
-                            alt="Connective Church"><strong>Connective Church <i
-                                class="fa fa-external-link"></i></strong></a>
-                    <hr>Branding, Web Development<br><i>Queen Creek, AZ</i>
+                <!-- Project 4 -->
+                <div class="project">
+                    <div class="project-image">
+                        <img src="./images/proj4.png" alt="Villa Rental Management">
+                    </div>
+                    <div class="project-details">
+                        <h3><a href="https://puurspanje.nl/" target="_blank">Villa Rental Management</a></h3>
+                        <p>
+                            Developed a real estate platform for listing and managing villa rentals. Utilized React with TypeScript and Tailwind CSS for the frontend, and Node.js with PostgreSQL for the backend. Integrated GraphQL with Strapi for efficient data management, and contributed to workflow optimization within Strapi.
+                        </p>
+                        <!-- <ul>
+                            <li><strong>Tech Stack:</strong> React, TypeScript, Tailwind CSS, Node.js, PostgreSQL, GraphQL, Strapi, OpenAI</li>
+                            <li><strong>Duration:</strong> 8 months</li>
+                        </ul> -->
+                    </div>
                 </div>
-                <div class="item wow flipInY" style="visibility: visible; animation-name: flipInY;">
-                    <a data-fancybox="" href="https://www.youtube.com/embed/tV4jkKrk4wo"><img
-                            src="./sample_files/lighthouse.jpg" alt="Lighthouse School"><strong>Lighthouse School
-                        </strong></a>
-                    <hr>Animation<br><i>San Antonio, TX</i>
-                </div>
-                <div class="item wow flipInY" style="visibility: visible; animation-name: flipInY;">
-                    <a href="./sample_files/ch.jpg" data-fancybox=""><img src="./sample_files/ch.jpg"
-                            alt="CityHope Outreach"><strong>CityHope Outreach </strong></a>
-                    <hr>Branding<br><i>Daphne, AL</i>
-                </div>
-                <div class="item wow flipInY" style="visibility: hidden; animation-name: none;">
-                    <a href="./sample_files/communityschool.jpg" data-fancybox=""><img
-                            src="./sample_files/communityschool.jpg" alt="The Community School"><strong>The Community
-                            School </strong></a>
-                    <hr>Branding<br><i>Daphne, AL</i>
-                </div>
-                <div class="item wow flipInY" style="visibility: hidden; animation-name: none;">
-                    <a href="./sample_files/vertex.jpg" data-fancybox=""><img src="./sample_files/vertex.jpg"
-                            alt="Vertex Education"><strong>Vertex Education </strong></a>
-                    <hr>Branding, Signage<br><i>Chandler, AZ</i>
-                </div>
-                <div class="item wow flipInY" style="visibility: hidden; animation-name: none;">
-                    <a data-fancybox="" href="https://www.youtube.com/embed/PrXGGpejRkQ"><img
-                            src="./sample_files/vertex-animation.jpg" alt="Vertex - Values"><strong>Vertex - Values
-                        </strong></a>
-                    <hr>Animation<br><i>Chandler, AZ</i>
-                </div>
-                <div class="item wow flipInY" style="visibility: hidden; animation-name: none;">
-                    <a href="./sample_files/legacy-banners.jpg" data-fancybox=""><img
-                            src="./sample_files/legacy-banners.jpg" alt="Legacy Traditional Schools"><strong>Legacy
-                            Traditional Schools </strong></a>
-                    <hr>Banners<br><i>Phoenix, AZ</i>
-                </div>
-                <div class="item wow flipInY" style="visibility: hidden; animation-name: none;">
-                    <a href="./sample_files/connective-tshirt.jpg" data-fancybox=""><img
-                            src="./sample_files/connective-tshirt.jpg" alt="Connective Church"><strong>Connective Church
-                        </strong></a>
-                    <hr>Apparel<br><i>Queen Creek, AZ</i>
-                </div>
-                <div class="item wow flipInY" style="visibility: hidden; animation-name: none;">
-                    <a href="./sample_files/jungle-hospital.jpg" data-fancybox=""><img
-                            src="./sample_files/jungle-hospital.jpg" alt="Jungle Hospital"><strong>Jungle Hospital
-                        </strong></a>
-                    <hr>Branding<br><i>Rio Viejo, Honduras</i>
-                </div>
-                <div class="clear"></div>
-                <p class="up"><a href="https://fultondesign.net/#wrap"><i class="fa fa-angle-up"></i></a></p>
-                <p class="resume wow fadeInDown" style="visibility: hidden; animation-name: none;">
-                    <a href="https://fultondesign.net/upload/jfulton-resume2024a.pdf" target="_blank"><i
-                            class="fa fa-download"></i> &nbsp; Download Resume</a>
-                </p>
             </div>
-        </div> -->
+        </div>
         <div id="contact" class="content">
             <div class="container">
                 <h3>Let's connect.</h3>
