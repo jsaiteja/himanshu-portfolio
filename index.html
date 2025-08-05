@@ -93,35 +93,14 @@
             flex: 1 0 auto;
         }
 
-        /* Make logo image fill the space between nav and intro */
-        /* Make logo image fill the space between nav and intro */
-        .logo {
-            width: 100vw;
-            height: calc(100vh - 70px);
-            /* Adjust 70px if your nav+navbar is taller/shorter */
-            min-height: 320px;
-            max-height: 700px;
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
-            /* Stretch image to fill vertical space */
-            margin: 0;
-            padding: 0;
-            background: #fff;
-            overflow: hidden;
+        .hero__image {
+            width: 100%;
+            height: 100%; /* You can change this height as needed */
+            background-image: url('images/landing_image_01.png'); /* Replace with your hero image URL */
+            background-size: cover;
+            background-position: center;
         }
 
-        .logo img {
-            width: 100vw;
-            height: 100%;
-            object-fit: cover;
-            /* Fill container, cropping if needed */
-            display: block;
-            margin: 0;
-            border-radius: 0;
-            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
-            background: #fff;
-        }
 
         /* Remove extra space above and below logo */
         nav {
@@ -269,9 +248,9 @@
             <li><a href="https://fultondesign.net/#contact">Contact</a></li>
         </ul>
     </nav>
-    <div class="logo">
+    <!-- <div class="logo">
         <img src="./sample_files/landing_image.png" alt="Software Engineer Illustration">
-    </div>
+    </div> -->
     <div id="wrap">
         <div class="hero__image">
         </div>
